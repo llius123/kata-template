@@ -1,10 +1,9 @@
 version: '3' #This denotes that we are using version 3 of Docker Compose
 services: #This section defines all the different containers we will create.
-  kata-template: #This is the name of our Nextjs application.
+  kata-template : #This is the name of our Nextjs application.
     image: node:alpine
     working_dir: "/app"
     volumes:
       - .:/app
     ports:
-      - 3000:3000
-    command: npm run init
+      - 3000-3001
