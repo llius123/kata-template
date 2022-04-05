@@ -55,13 +55,5 @@ describe('christmas-lights-kata', () => {
       const grid = lights.getGrid()
       expect(grid).toEqual(gridLightsOn)
   })
-
-    // test(`
-    //   GIVEN i have 999,999 grid
-    //   WHEN i turn on 0,0 through 999,999
-    //   THEN every light should be on
-    // `, () => {
-
-    // })
-  });
+});
   

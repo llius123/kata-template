@@ -28,12 +28,23 @@ export class Lights {
     }
 
     public toggleLightsFrom(startX: number, startY: number, endX: number, endY: number): void {
-        endX--;
-        endY--;
-        for (let indexRows = startX; indexRows <= endX; indexRows++) {
-            for (let indexColumns = startY; indexColumns <= endY; indexColumns++) {
-                    this.grid[indexRows][indexColumns] = 'O'                    
-               }
-        }       
+        if(startX < endX && startY < endY){
+            endX--;
+            endY--;
+            for (let indexRows = startX; indexRows <= endX; indexRows++) {
+                for (let indexColumns = startY; indexColumns <= endY; indexColumns++) {
+                        this.grid[indexRows][indexColumns] = 'O'                    
+                   }
+            }       
+        }
+        if(startX > endX && startY > endY){
+            startX--;
+            startY--;
+            for (let indexRows = endX; indexRows <= startX; indexRows++) {
+                for (let indexColumns = endY; indexColumns <= startY; indexColumns++) {
+                        this.grid[indexRows][indexColumns] = 'O'                    
+                   }
+            }       
+        }
     }
 }
