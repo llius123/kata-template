@@ -26,4 +26,7 @@ export class Lights {
     public getGrid(){
         return this.grid
     }
+
+    public toggleLightsFrom(startX: number, startY: number, endX: number, endY: number): void {
+    }
 }

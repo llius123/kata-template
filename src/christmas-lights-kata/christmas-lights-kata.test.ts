@@ -7,6 +7,8 @@ const gridWithPosition = [
 ]
 
 const grid = [ [ 'X', 'X', 'X' ], [ 'X', 'X', 'X' ], [ 'X', 'X', 'X' ] ]
+const gridLightsOn = [ [ 'O', 'O', 'O' ], [ 'O', 'O', 'O' ], [ 'O', 'O', 'O' ] ]
+
 describe('christmas-lights-kata', () => {
     test('Grid generator with position', async () => {
       const lights = new Lights()
@@ -23,5 +25,29 @@ describe('christmas-lights-kata', () => {
 
       expect(lightsGrid).toEqual(grid)
     });
+
+    test(`
+      GIVEN i have 3,3 grid
+      WHEN i turn on 0,0 through 3,3
+      THEN every light should be on
+    `, () => {
+      // GIVEN
+      const lights = new Lights()
+      lights.generateLightGrid(3,3)
+      // WHEN
+      lights.toggleLightsFrom(3,3,0,0)
+      // THEN
+      const grid = lights.getGrid()
+      expect(grid).toEqual(gridLightsOn)
+      
+    })
+
+    // test(`
+    //   GIVEN i have 999,999 grid
+    //   WHEN i turn on 0,0 through 999,999
+    //   THEN every light should be on
+    // `, () => {
+
+    // })
   });
   
