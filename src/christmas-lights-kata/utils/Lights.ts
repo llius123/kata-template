@@ -28,5 +28,12 @@ export class Lights {
     }
 
     public toggleLightsFrom(startX: number, startY: number, endX: number, endY: number): void {
+        endX--;
+        endY--;
+        for (let indexRows = startX; indexRows <= endX; indexRows++) {
+            for (let indexColumns = startY; indexColumns <= endY; indexColumns++) {
+                    this.grid[indexRows][indexColumns] = 'O'                    
+               }
+        }       
     }
 }

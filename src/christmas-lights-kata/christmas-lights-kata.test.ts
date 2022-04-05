@@ -28,6 +28,21 @@ describe('christmas-lights-kata', () => {
 
     test(`
       GIVEN i have 3,3 grid
+      WHEN i turn on 3,3 through 0,0
+      THEN every light should be on
+    `, () => {
+      // GIVEN
+      const lights = new Lights()
+      lights.generateLightGrid(3,3)
+      // WHEN
+      lights.toggleLightsFrom(0,0,3,3)
+      // THEN
+      const grid = lights.getGrid()
+      expect(grid).toEqual(gridLightsOn)
+    })
+
+    test(`
+      GIVEN i have 3,3 grid
       WHEN i turn on 0,0 through 3,3
       THEN every light should be on
     `, () => {
@@ -39,8 +54,7 @@ describe('christmas-lights-kata', () => {
       // THEN
       const grid = lights.getGrid()
       expect(grid).toEqual(gridLightsOn)
-      
-    })
+  })
 
     // test(`
     //   GIVEN i have 999,999 grid
