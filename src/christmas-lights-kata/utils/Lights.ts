@@ -23,4 +23,7 @@ export class Lights {
     public getGridWithPosition(){
         return this.gridWithPosition
     }
+    public getGrid(){
+        return this.grid
+    }
 }
