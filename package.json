@@ -6,6 +6,7 @@
   "scripts": {
     "build": "rimraf ./build && tsc",
     "start:dev": "nodemon",
+    "debug": "nodemon --inspect-brk=0.0.0.0",
     "start": "npm run build && node build/index.js",
     "lint": "eslint . --ext .ts",
     "test": "jest",
