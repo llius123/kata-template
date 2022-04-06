@@ -6,7 +6,7 @@
   "scripts": {
     "build": "rimraf ./build && tsc",
     "start:dev": "nodemon src/christmas-lights-kata/christmas-lights-kata.ts",
-    "debbug": "nodemon --inspect src/christmas-lights-kata/christmas-lights-kata.ts",
+    "debug": "nodemon --inspect-brk=0.0.0.0 src/christmas-lights-kata/christmas-lights-kata.ts",
     "start": "npm run build && node build/index.js",
     "lint": "eslint . --ext .ts",
     "test": "jest",
