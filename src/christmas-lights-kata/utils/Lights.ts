@@ -1,20 +1,21 @@
 export class Lights {
   private grid: [[string]];
-  private gridWithPosition: [[[string, string]]];
+  private gridWithPosition: [[[number, number, string]]];
 
   constructor() {
     this.grid = [['']];
-    this.gridWithPosition = [[['', '']]];
+    this.gridWithPosition = [[[0, 0, 'X']]];
   }
 
   public generateLightGrid(rows: number, columns: number) {
     for (let indexRows = 0; indexRows < rows; indexRows++) {
       this.grid[indexRows] = [''];
-      this.gridWithPosition[indexRows] = [['', '']];
+      this.gridWithPosition[indexRows] = [[0, 0, 'X']];
       for (let indexColumns = 0; indexColumns < columns; indexColumns++) {
         this.grid[indexRows][indexColumns] = 'X';
         this.gridWithPosition[indexRows][indexColumns] = [
-          indexRows + ',' + indexColumns,
+          indexRows,
+          indexColumns,
           'X',
         ];
       }
