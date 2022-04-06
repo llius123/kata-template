@@ -29,6 +29,12 @@ const gridLightsOn = [
   ['O', 'O', 'O'],
 ];
 
+const gridLightsOnOnlyFirstRow = [
+  ['X', 'X', 'X'],
+  ['X', 'X', 'X'],
+  ['O', 'O', 'O'],
+];
+
 describe('christmas-lights-kata', () => {
   test('Grid generator with position', async () => {
     const lights = new Lights();
@@ -74,5 +80,20 @@ describe('christmas-lights-kata', () => {
     // THEN
     const grid = lights.getGrid();
     expect(grid).toEqual(gridLightsOn);
+  });
+
+  test(`
+    GIVEN I have 3x3 grid with
+    WHEN i want to turn on from 3,0 to 0,0
+    THEN i turn on the first row
+  `, () => {
+    // GIVEN
+    const lights = new Lights();
+    lights.generateLightGrid(3, 3);
+    // WHEN
+    lights.toggleLightsFrom(0, 3, 0, 0);
+    // THEN
+    const grid = lights.getGrid();
+    expect(grid).toEqual(gridLightsOnOnlyFirstRow);
   });
 });
