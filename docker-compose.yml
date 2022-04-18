@@ -6,5 +6,5 @@ services: #This section defines all the different containers we will create.
     volumes:
       - .:/app
     ports:
-      - 3000-3000
-      - 9229-9229
+      - $NODE_DOCKER_PORT:$NODE_DOCKER_PORT
+    env_file: ./.env
